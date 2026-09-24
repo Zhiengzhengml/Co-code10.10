@@ -1,22 +1,22 @@
 {
-    "strategy": "Prioritize movement toward the goal direction when unobstructed, checking FORWARD first, then LEFT, then RIGHT. Stop if all paths are blocked.",
+    "strategy": "Prioritize moving toward the goal direction if clear, otherwise check left, then right. Stop if all directions are blocked.",
     "decisions": [
         {
-            "condition": "The goal is ahead and the front is clear",
+            "condition": "Goal is ahead and front is clear",
             "action": "FORWARD"
         },
         {
-            "condition": "The goal is to the left and the left direction is clear",
+            "condition": "Goal is left and left is clear",
             "action": "LEFT"
         },
         {
-            "condition": "The goal is to the right and the right direction is clear",
+            "condition": "Goal is right and right is clear",
             "action": "RIGHT"
         },
         {
-            "condition": "All directions are blocked or the goal is unreachable",
+            "condition": "All directions are blocked or unknown",
             "action": "STOP"
         }
     ],
-    "stop_condition": "All directions are blocked, preventing further movement toward the goal"
+    "stop_condition": "All directions are blocked or unknown"
 }
